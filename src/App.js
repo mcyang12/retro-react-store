@@ -17,14 +17,13 @@ function App() {
     console.log(`${item.title} added to cart.`);
   };
 
-  //Not sure why this isn't responding// Need support
   const removeFromCart = (itemRemove) => {
-    setCart(cart.filter(item => item.id !== itemRemove.id));
+    setCart(cart.filter(item => item !== itemRemove));
     console.log(`Item removed from cart.`);
   };
   //variable coordination...not sure if favorites placement is correct//
-  const addToFavorite = (itemFavorite) => {
-    dispatch({ type: 'ADD_TO_FAVORITE', payload: itemFavorite, favorites });
+  const addToFavorite = (itemFavorite, favorites) => {
+    dispatch({ type: 'ADD_TO_FAVORITE', payload: itemFavorite });
     console.log(`Item added to favorite.`);
   };
 
@@ -33,13 +32,11 @@ function App() {
       <body>
       <div className="App">
         <h1>Retro Media Store</h1>
-        <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/media/:type/:id">
             <MediaDetail mediaItems={mediaItems} addToCart={addToCart} addToFavorite={addToFavorite} />
           </Route>
-        </Switch>
-        <MediaList mediaItems={mediaItems} addToCart={addToCart} />
+        <MediaList mediaItems={mediaItems} addToCart={addToCart} removeFromCart={removeFromCart} />
         <Message />
       </div>
       </body>
