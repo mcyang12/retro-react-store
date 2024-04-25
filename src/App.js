@@ -22,7 +22,7 @@ function App() {
     setCart(cart.filter(item => item.id !== itemRemove.id));
     console.log(`Item removed from cart.`);
   };
-  //variable coordination...not sure if I favorites placement is correct//
+  //variable coordination...not sure if favorites placement is correct//
   const addToFavorite = (itemFavorite) => {
     dispatch({ type: 'ADD_TO_FAVORITE', payload: itemFavorite, favorites });
     console.log(`Item added to favorite.`);
