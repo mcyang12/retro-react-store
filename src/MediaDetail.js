@@ -1,5 +1,6 @@
 import React from 'react';
 import MediaItem from './MediaItem';
+import { useParams } from 'react-router-dom';
 
 function MediaDetail({ mediaItems, addToCart, addToFavorite }) {
   const { type, id } = useParams();
