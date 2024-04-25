@@ -1,9 +1,12 @@
 import React, { useState, useReducer } from 'react';
+import { Router, Route } from 'react-router-dom';
 import MediaList from './MediaList';
 import mediaItems from './mediaItems';
 import Home from './Home';
 import MediaDetail from './MediaDetail';
 import Message from './Message';
+
+//YouTube channel assist: Web Dev Simplified
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -14,11 +17,12 @@ function App() {
     console.log(`${item.title} added to cart.`);
   };
 
+  //Not sure why this isn't responding// Need support
   const removeFromCart = (itemRemove) => {
     setCart(cart.filter(item => item.id !== itemRemove.id));
     console.log(`Item removed from cart.`);
   };
-
+  //variable coordination...not sure if I favorites placement is correct//
   const addToFavorite = (itemFavorite) => {
     dispatch({ type: 'ADD_TO_FAVORITE', payload: itemFavorite, favorites });
     console.log(`Item added to favorite.`);
