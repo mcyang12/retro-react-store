@@ -13,6 +13,21 @@ body {
   padding: 10px;
 }
 
+nav {
+  background-color: #fafad2;
+  border: 1px solid grey;
+  transform: translate(-50%, -50%);
+  box-shadow: 1px 1px 5px rgba(0,0,0,.5);
+  padding: 15px 15px;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: 2rem;
+  padding-block: 2rem;
+  text-align: center;
+}
+
 h1 {
   color: #8b0000;
 }
